@@ -16,8 +16,9 @@ RUN apt-get update -qq && \
 
 RUN /usr/sbin/enable_insecure_key
 RUN mkdir -p /etc/my_init.d
-ADD settings.json /opt/settings.json
-ADD transmission.sh /etc/my_init.d/transmission.sh
+COPY ./settings.json /opt/settings.json
+COPY ./transmission.sh /etc/my_init.d/transmission.sh
+RUN chmod +x /etc/my_init.d/transmission.sh
 
 VOLUME ["/config"]
 VOLUME ["/mnt"]
@@ -25,6 +26,6 @@ VOLUME ["/mnt"]
 EXPOSE 9091
 EXPOSE 54321
 
-#CMD ["/sbin/my_init"]
+CMD ["/sbin/my_init"]
 
 #CMD ["supervisord", "-c", "/opt/supervisor.conf", "-n"]
