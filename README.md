@@ -10,6 +10,6 @@ Based of gfjardim's original docker.
 
 To run:
 
-docker run -d --net='host' --name=transmission -e ADMIN_PASS=password -v /path/to/config:/config -v /path/to/mnt:/mnt -v /etc/localtime:/etc/localtime:ro botez/transmission
+docker run -d --net='host' --name=transmission -e ADMIN_PASS=password -v /path/to/config:/config -v /path/to/mnt:/mnt -v /etc/localtime:/etc/localtime:ro botez/docker-transmission
 
 (transmission username is "transmission")
