@@ -1,5 +1,5 @@
-FROM ubuntu:14.04
-MAINTAINER gfjardim <gfjardim@gmail.com>
+FROM FROM phusion/baseimage:0.9.11
+MAINTAINER botez <troyolson1@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN locale-gen en_US en_US.UTF-8
@@ -23,4 +23,6 @@ VOLUME ["/downloads"]
 EXPOSE 9091
 EXPOSE 54321
 
-CMD ["supervisord", "-c", "/opt/supervisor.conf", "-n"]
+CMD ["/sbin/my_init"]
+
+#CMD ["supervisord", "-c", "/opt/supervisor.conf", "-n"]
