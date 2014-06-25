@@ -12,7 +12,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 365C5CA1
 
 RUN apt-get update -qq && \
     apt-get upgrade -y && \
-    apt-get install -qy --force-yes transmission-daemon supervisor
+    apt-get install -qy --force-yes transmission-daemon
 
 ADD files/ /opt/
 RUN chmod +x /opt/transmission.sh
