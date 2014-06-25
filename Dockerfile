@@ -18,7 +18,7 @@ ADD files/ /opt/
 RUN chmod +x /opt/transmission.sh
 
 VOLUME ["/config"]
-VOLUME ["/downloads"]
+VOLUME ["/mnt"]
 
 EXPOSE 9091
 EXPOSE 54321
