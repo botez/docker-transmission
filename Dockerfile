@@ -14,8 +14,13 @@ RUN apt-get update -qq && \
     apt-get upgrade -y && \
     apt-get install -qy --force-yes transmission-daemon
 
-ADD files/ /opt/
 RUN chmod +x /opt/transmission.sh
+RUN /usr/sbin/enable_insecure_key
+RUN mkdir -p /etc/my_init.d
+ADD files/settings.json /opt/settings.json
+ADD files/transmission.sh /etc/my_init.d/transmission.sh
+
+
 
 VOLUME ["/config"]
 VOLUME ["/mnt"]
